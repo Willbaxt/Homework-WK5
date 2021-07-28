@@ -33,7 +33,6 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
-
-The following animation demonstrates the application functionality:
-
-![A user clicks on slots on the color-coded calendar and edits the events.]
+## links
+https://github.com/Willbaxt/Homework-WK5
+https://willbaxt.github.io/Homework-WK5/
