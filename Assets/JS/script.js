@@ -1,6 +1,4 @@
-
-
-// Display today's day and date
+// grab the date and display it in jumbotron
 var todaysDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todaysDate);
 
@@ -11,10 +9,10 @@ $(document).ready(function () {
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
-        // Save text in local storage
+        // Saves text in local storage
         localStorage.setItem(time, text);
     });
-   
+
     function timeTracker() {
         //get current number of hours.
         var theTime = moment().hour();
@@ -23,18 +21,16 @@ $(document).ready(function () {
         $(".time-block").each(function () {
             var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
 
-            // To check the time and add the classes for background indicators
+            // checks the time and changes the class of the rows to past present future
             if (timeBlock < theTime) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
                 $(this).addClass("past");
-            }
-            else if (timeBlock === theTime) {
+            } else if (timeBlock === theTime) {
                 $(this).removeClass("past");
                 $(this).removeClass("future");
                 $(this).addClass("present");
-            }
-            else {
+            } else {
                 $(this).removeClass("present");
                 $(this).removeClass("past");
                 $(this).addClass("future");
@@ -43,7 +39,7 @@ $(document).ready(function () {
         });
     }
 
-    // Get item from local storage if any
+    // Get item from local storage if any from lines 13
     $("#hour8 .description").val(localStorage.getItem("hour8"));
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
